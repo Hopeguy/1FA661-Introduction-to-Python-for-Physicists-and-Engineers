@@ -114,7 +114,7 @@ import math
 # print(a_norm)
 
 
-# # ------FizzBuzz----------
+# ------FizzBuzz----------
 
 # n = 100
 
