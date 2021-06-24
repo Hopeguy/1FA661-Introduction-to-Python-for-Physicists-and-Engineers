@@ -1,4 +1,5 @@
 import numpy as np
+import math
 #Question 1
 
 
@@ -61,8 +62,29 @@ Matrix_2[1,:] = 0
 
 #Question 6
 
+def L2(vector):
+    Total = 0
+    for i in vector:
+        Total = Total + i**2
+        L2 = math.sqrt(Total)
+    return  L2
+        
+vector = np.array([3,4]) # for any vector finds the L2 norm
+print(L2(vector))
+print(np.linalg.norm(vector))
 
 #Question 7
 Matrix_3 = np.random.random((10,10)) -0.5
 New_Matrix_3 = np.where(Matrix_3 > 0,Matrix_3, Matrix_3*0)
+
+#Question 8
+
+R1 = np.random.random((10, 10))
+R2 = R1 < 0.5  #gives an matrix where each value lower than 0.5 is true
+print(R1)
+print(R1[R2]) #prints all the values in R1 that is true, aka all values below 0.5
+print(R1[~R2]) #prints all the values in R1 that is false, aka all values above 0.5
+R1[R2] = -1
+print(R1) #now prints the whole R1, where all the values that were true, aka below 0.5 are instead -1
+
 
