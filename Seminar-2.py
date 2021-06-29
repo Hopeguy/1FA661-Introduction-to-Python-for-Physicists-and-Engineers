@@ -2,7 +2,6 @@
 #Fibbonaci seq
 
 import numpy as np
-import matplotlib.pyplot as plt
 
 fib = np.array([0,1])
 for i in range(20):
