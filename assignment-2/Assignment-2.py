@@ -59,7 +59,7 @@ plt_2d(4, solution2[:,0], solution2[:,1], 'x-axis [m]', 'y-axis [m]', 'Q2 Proton
 start3 =np.array([3,3,0,0,0,prot_vel]) #array [x,y,z,vx,vy,vz] starting 3 meters out from origo, on the x-axis, launch staight up in z direction (positive)
 
 def get_pos_2(y,t):   #function used for solving question 3
-    R = np.sqrt((y[0]**2) + (y[1]**2)) # Pyth to find the distance from z-axis(origo), using x and y values
+    R = y[0] # Due to being cylindrical around the z axis, the radius = magnitude of position vector
     cos_phi = y[0]/R #using polar coordinates as we are looking at an magnetic field going around the z-axis
     sin_phi = y[1]/R 
     B_x = sin_phi*9/R # magnetic field strength in x direction
