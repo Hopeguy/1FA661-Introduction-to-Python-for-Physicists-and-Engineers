@@ -56,16 +56,18 @@ plt_2d(4, solution2[:,0], solution2[:,1], 'x-axis [m]', 'y-axis [m]', 'Q2 Proton
 
 #-------------------Question 3------------------
 
-start3 =np.array([3,3,0,0,0,prot_vel]) #array [x,y,z,vx,vy,vz] starting 3 meters out from origo, on the x-axis, launch staight up in z direction (positive)
+start3 =np.array([3/(np.sqrt(2)),3/(np.sqrt(2)),0,0,0,prot_vel]) #array [x,y,z,vx,vy,vz] starting 3 meters out from origo, on the x-axis, launch staight up in z direction (positive)
 
 def get_pos_2(y,t):   #function used for solving question 3
-    R = y[0] # Due to being cylindrical around the z axis, the radius = magnitude of position vector
+    R = y[0]*np.sqrt(2) # Due to being cylindrical around the z axis, the radius = magnitude of position vector
     cos_phi = y[0]/R #using polar coordinates as we are looking at an magnetic field going around the z-axis
     sin_phi = y[1]/R 
     B_x = sin_phi*9/R # magnetic field strength in x direction
     B_y = -cos_phi*9/R # magnetic field strength in y direction
     
+    
     mag_field = np.array([B_x,B_y, 0]) #new magnetic field depending on the components in x and y (around z-axis)
+    
     
     return np.concatenate(([y[3],y[4],y[5]],(prot_charge*np.cross(y[3:],mag_field))/prot_mass)) 
 

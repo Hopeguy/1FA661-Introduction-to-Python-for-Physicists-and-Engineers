@@ -26,7 +26,7 @@ class Objects:
 G = 6.67*10**-11 # Gravitional constant   
 lim_fig = 5*10**12  #Sets the limits on the plot figures
 plt.rcParams['figure.figsize'] = (16*2,9*2) #changes the aspect ratio and size of the plots to 16:9
-Accuracy_const = 30 # at 30 we change from a step size of hours to 2 minutes, The higher lower accuracy number the lower the step size, 
+Accuracy_const = 30 # at 30 we change from a step size of hours to 2 minutes, The higher accuracy number the lower the step size
 time_max = int(8760*Accuracy_const) * 100 #Minutes in a Earth year if Accuracy constants = 60 * times 100 years
     
 
@@ -145,7 +145,7 @@ plt.title("Solar system starting position")
 plt.xlabel("[m]")
 plt.ylabel("[m]")
 
-fig1.savefig("Starting positions for solar system")
+fig1.savefig("Images/Starting positions for solar system.png")
 
 
 #----------------Plotting of the paths the planets over 100 years---------------
@@ -179,7 +179,7 @@ for t, planets_6 in enumerate(system):
 for planets_7 in system_plot_2:
     ax2.add_artist(planets_7)
 
-fig2.savefig("solar system after 100 years")
+fig2.savefig("Images/solar system after 100 years.png")
 
 
 

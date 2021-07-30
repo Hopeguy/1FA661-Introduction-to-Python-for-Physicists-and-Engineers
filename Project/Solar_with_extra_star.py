@@ -210,7 +210,7 @@ plt.title("Solar system starting position with Star and its projected path")
 plt.xlabel("[m]")
 plt.ylabel("[m]")
 
-fig1.savefig("Starting position at year Zero with extra star and projected path")
+fig1.savefig("Images/Starting position at year Zero with extra star and projected path.png")
 
 
 #---------------Plotting of the paths the planets/Star takes----------------
@@ -248,7 +248,7 @@ for planets_7 in system_plot_2:
     ax2.add_patch(planets_7)
 
 
-fig2.savefig("Solar system with extra star after 100 years")
+fig2.savefig("Images/Solar system with extra star after 100 years.png")
 
 print(Star_save_vel)
 
